@@ -1,0 +1,12 @@
+application: cs230n
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /Root13/style
+  static_dir: style
+
+- url: /Root13/.*
+  script: helloworld.application
