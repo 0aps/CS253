@@ -5,7 +5,7 @@ import webapp2
 
 class MainPage(webapp2.RequestHandler):
 
-    hi = open("page.html").read()
+    hi = open("Root13/page.html").read()
 
     def escape_html(self, caracter):
     	if caracter == '&':
