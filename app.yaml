@@ -8,5 +8,11 @@ handlers:
 - url: /style
   static_dir: Root13/style
 
-- url: /.*
+- url: /root13
   script: Root13.helloworld.application
+
+- url: /login
+  script: Login.login.application
+
+- url: /login/style
+  static_dir: Login/style

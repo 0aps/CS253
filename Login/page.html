@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<head>
+	<title>Physics</title>
+	
+	<link rel="stylesheet" type="text/css" href="login/style/style.css">
+
+</head>
+
+<body>
+		<img id="fondo" src="login/style/light.png" alt="background image">
+
+
+		<center> 
+		<h1>Login Udacity Lesson 2.</h1><br>
+		<form method="post">
+			<label>
+				Username
+				<input type="text" name="username" value="%(u)s"><span> %(user)s </span>
+				<br><br>
+			</label>
+			<label>
+				Password
+				<input type="password" name="password"> <span> %(password)s </span>
+				<br>
+			</label>
+			<label>
+				Veriy Password 
+				<input type="password" name="verify"> <span> %(verify)s </span>
+				<br><br>
+			</label>
+			<label>
+				Email (optional)	
+				<input type="text" name="email"> <span> %(email)s </span>
+				<br>
+			</label>
+			
+			<br>
+			<input type="submit" value="Log in!">
+		</form>
+		</center>
+
+</body>
+</html>

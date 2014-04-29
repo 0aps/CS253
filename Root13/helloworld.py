@@ -68,6 +68,6 @@ class handlerForm(webapp2.RequestHandler):
 
 
 application = webapp2.WSGIApplication([
-    ('/', MainPage),
+    ('/root13', MainPage),
     ('/testform', handlerForm),
 ], debug=True)
