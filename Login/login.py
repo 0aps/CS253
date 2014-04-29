@@ -74,24 +74,20 @@ class MainPage(webapp2.RequestHandler):
         email = self.request.get("email")
 
         if( self.verify_session(user, passw, passw2, email) ):
-            self.response.write("yes")
+            self.redirect("/login/welcome?user="+user)
         else:
             self.error["u"] = self.escape_html(user)
             self.response.write(self.hi%self.error)
 
 
-class handlerForm(webapp2.RequestHandler):
-
-    def post(self):
-        self.response.headers['Content-Type'] = 'text/plain'
-        self.response.write(self.request)
+class handlerWellcome(webapp2.RequestHandler):
 
     def get(self):
-    	q = self.request.get("q")
-    	self.response.headers['Content-Type'] = 'text/plain'
-    	self.response.write(q)
-
+    	q = self.request.get("user")
+    	self.response.headers['Content-Type'] = 'text/html'
+    	self.response.write("<h1>Welcome, %s!</h1>"%q)
 
 
 application = webapp2.WSGIApplication([
-    ('/login', MainPage)], debug=True)
+    ('/login', MainPage), ('/login/welcome', handlerWellcome)
+], debug=True)
